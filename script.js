@@ -1,3 +1,7 @@
+// =============================
+// ELEMENTOS
+// =============================
+
 const intro = document.getElementById("intro");
 const videoSection = document.getElementById("videoSection");
 const video = document.getElementById("videoIntro");
@@ -5,41 +9,47 @@ const convocatoria = document.getElementById("convocatoria");
 const musica = document.getElementById("musica");
 const ingresarBtn = document.getElementById("ingresarBtn");
 
-// Cuando hace clic en INGRESAR
+// =============================
+// INGRESAR
+// =============================
+
 ingresarBtn.addEventListener("click", () => {
 
-    intro.style.opacity = "0";
+    // Mostrar el video
+    videoSection.classList.add("active");
 
-    setTimeout(() => {
+    // Ocultar la intro
+    intro.style.display = "none";
 
-        intro.style.display = "none";
+    // Reiniciar por si vuelven a entrar
+    video.currentTime = 0;
 
-        videoSection.classList.add("active");
-
-        video.play();
-
-    },800);
+    // Reproducir el video
+    video.play();
 
 });
 
-// Cuando termina el video
+// =============================
+// CUANDO TERMINA EL VIDEO
+// =============================
+
 video.addEventListener("ended", () => {
 
-    videoSection.style.opacity = "0";
+    // Ocultar video
+    videoSection.classList.remove("active");
+    videoSection.style.display = "none";
 
-    setTimeout(() => {
+    // Mostrar convocatoria
+    convocatoria.style.display = "flex";
 
-        videoSection.style.display = "none";
+    // Empezar la música
+    musica.currentTime = 0;
+    musica.play();
 
-        convocatoria.style.display = "flex";
-
-        musica.play();
-
-        window.scrollTo({
-            top:0,
-            behavior:"smooth"
-        });
-
-    },700);
+    // Ir arriba de la página
+    window.scrollTo({
+        top: 0,
+        behavior: "smooth"
+    });
 
 });
