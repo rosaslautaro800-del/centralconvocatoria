@@ -192,9 +192,11 @@ html,body{
 
 .info h2{
 
-    color:#d4af37;
+    color:#FFD700;
 
     margin-bottom:20px;
+
+    text-shadow:0 0 8px rgba(255,215,0,.45);
 
 }
 
@@ -203,6 +205,18 @@ html,body{
     margin:12px 0;
 
     font-size:18px;
+
+    color:#FFD700;
+
+    text-shadow:0 0 8px rgba(255,215,0,.45);
+
+}
+
+.info strong{
+
+    color:#FFD700;
+
+    text-shadow:0 0 8px rgba(255,215,0,.45);
 
 }
 
